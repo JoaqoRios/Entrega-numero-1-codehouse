@@ -2,11 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Mi Tienda</title>
+</head>+
 
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f6fa;
+    margin: 0;
+    padding: 0;
+}
+#formDatos, #seleccionPrendas, #metodoPagoDiv, #resumen, #resultado {
+    max-width: 400px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+button {
+    background: #2d8cf0;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    margin: 10px 0;
+    cursor: pointer;
+    font-size: 1em;
+}
+button:hover {
+    background: #1a6fb3;
+}
+input, select {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+h3 {
+    color: #2d8cf0;
+}
+p {
+    margin: 6px 0;
+}
+</style>
+<body>
+     <h2>Bienvenido a la tienda</h2>
+    <form id="formDatos">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="text" id="apellido" placeholder="Apellido" required>
+        <input type="number" id="edad" placeholder="Edad" required>
+        <button type="submit">Continuar</button>
+    </form>
+
+    <div id="seleccionPrendas" style="display:none;">
+        <h3>Selecciona tus prendas</h3>
+        <label><input type="checkbox" value="Remera" data-precio="25000"> Remera - $25000</label><br>
+        <label><input type="checkbox" value="Pantalón" data-precio="50000"> Pantalón - $50000</label><br>
+        <label><input type="checkbox" value="Zapatillas" data-precio="150000"> Zapatillas - $150000</label><br>
+        <button id="continuarPago">Continuar a pago</button>
+    </div>
+
+    <div id="metodoPago" style="display:none;">
+        <h3>Selecciona método de pago</h3>
+        <select id="pago">
+            <option value="1">Efectivo/Transferencia (10% descuento)</option>
+            <option value="2">Tarjeta de crédito (20% recargo)</option>
+            <option value="3">Tarjeta de débito (sin recargo)</option>
+        </select>
+        <button id="finalizarCompra">Finalizar compra</button>
+    </div>
+
+    <div id="resumen"></div>
+    <button id="verDescuentos">Ver productos con descuento</button>
+    <button id="verCarrito">Ver carrito</button>
+    <div id="resultado"></div>
     <script src="app.js"></script>
+
+
 </body>
 </html>
