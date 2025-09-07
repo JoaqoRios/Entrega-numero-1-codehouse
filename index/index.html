@@ -1,114 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>VIPER - Tienda Online</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-<style>
-html { scroll-behavior: smooth; }
-
-.productos { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; margin: 20px 0; }
-.producto-card { border:1px solid #ddd; border-radius:10px; padding:10px; text-align:center; }
-.producto-card img { width:100%; border-radius:8px; }
-</style>
+  <meta charset="UTF-8">
+  <title>VIPER - Tienda Online</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-<!-- Banner -->
-<div class="banner">ENVÍOS GRATIS A PARTIR DE $120.000 · 10% OFF EFECTIVO/TRANSFERENCIA</div>
-
-<!-- Header -->
-<header>
-  <div class="header-superior">
-    <h1>VIPER</h1>
-    <button id="abrirCarrito">🛒<span id="contadorCarrito">0</span></button>
+  <!-- Banner fijo -->
+  <div class="banner">
+    <p>ENVÍOS GRATIS A PARTIR DE $120.000 · 10% OFF EFECTIVO/TRANSFERENCIA</p>
   </div>
 
-  <nav>
-    <ul class="menu">
-      <li><a href="#productos-todos">Inicio</a></li>
-      <li><a href="#ropa">Ropa</a></li>
-      <li><a href="#accesorios">Accesorios</a></li>
-      <li><a href="#sale">Sale</a></li>
-    </ul>
-  </nav>
+  <!-- Header -->
+  <header>
+    <div class="header-superior">
+      <h1>VIPER</h1>
+      <button id="abrirCarrito">🛒<span id="contadorCarrito">0</span></button>
+    </div>
 
-  <div style="margin:10px 0; text-align:center;">
-    <button id="btnLogin" class="btn-comprar">Registrarse / Iniciar sesión</button>
-  </div>
-</header>
+    <div class="login-container">
+      <button id="btnLogin" class="btn-comprar">Registrarse / Iniciar sesión</button>
+    </div>
 
-<!-- Main -->
-<main>
-  <!-- Todos los productos al inicio -->
-  <section id="productos-todos" class="productos">
+    <nav>
+      <ul class="menu">
+        <li><a href="#" data-seccion="inicio">Inicio</a></li>
+        <li><a href="#" data-seccion="ropa">Ropa</a></li>
+        <li><a href="#" data-seccion="accesorios">Accesorios</a></li>
+        <li><a href="#" data-seccion="sale">Sale</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Secciones de productos -->
+  <main>
+    <!-- Inicio: todos los productos -->
+    <section id="inicio" class="productos">
+      <div class="producto-card" data-nombre="Remera Luxury" data-precio="26999" data-stock="5">
+        <img src="https://via.placeholder.com/250x300?text=Remera+Luxury" alt="Remera Luxury">
+        <h3>Remera Luxury</h3>
+        <p class="precio">$26.999</p>
+        <button class="btn-comprar">Agregar al carrito</button>
+      </div>
+      <div class="producto-card" data-nombre="Pantalón Cargo" data-precio="50000" data-stock="5">
+        <img src="https://via.placeholder.com/250x300?text=Pantalón+Cargo" alt="Pantalón Cargo">
+        <h3>Pantalón Cargo</h3>
+        <p class="precio">$50.000</p>
+        <button class="btn-comprar">Agregar al carrito</button>
+      </div>
+      <div class="producto-card" data-nombre="Zapatillas Urbanas" data-precio="150000" data-stock="5">
+        <img src="https://via.placeholder.com/250x300?text=Zapatillas+Urbanas" alt="Zapatillas Urbanas">
+        <h3>Zapatillas Urbanas</h3>
+        <p class="precio">$150.000</p>
+        <button class="btn-comprar">Agregar al carrito</button>
+      </div>
+    </section>
+
     <!-- Ropa -->
-    <div class="producto-card" data-categoria="ropa" data-nombre="Remera Luxury" data-precio="26999" data-stock="5">
-      <img src="https://via.placeholder.com/250x300?text=Remera+Luxury" alt="Remera Luxury">
-      <h3>Remera Luxury</h3>
-      <p class="precio">$26.999</p>
-      <button class="btn-comprar">Agregar al carrito</button>
-    </div>
-    <div class="producto-card" data-categoria="ropa" data-nombre="Pantalón Cargo" data-precio="50000" data-stock="5">
-      <img src="https://via.placeholder.com/250x300?text=Pantalón+Cargo" alt="Pantalón Cargo">
-      <h3>Pantalón Cargo</h3>
-      <p class="precio">$50.000</p>
-      <button class="btn-comprar">Agregar al carrito</button>
-    </div>
-    <div class="producto-card" data-categoria="ropa" data-nombre="Buzo Street" data-precio="35000" data-stock="5">
-      <img src="https://via.placeholder.com/250x300?text=Buzo+Street" alt="Buzo Street">
-      <h3>Buzo Street</h3>
-      <p class="precio">$35.000</p>
-      <button class="btn-comprar">Agregar al carrito</button>
-    </div>
+    <section id="ropa" class="productos" style="display:none;">
+      <div class="producto-card" data-nombre="Buzo Street" data-precio="35000" data-stock="5">
+        <img src="https://via.placeholder.com/250x300?text=Buzo+Street" alt="Buzo Street">
+        <h3>Buzo Street</h3>
+        <p class="precio">$35.000</p>
+        <button class="btn-comprar">Agregar al carrito</button>
+      </div>
+      <div class="producto-card" data-nombre="Campera Urbana" data-precio="60000" data-stock="5">
+        <img src="https://via.placeholder.com/250x300?text=Campera+Urbana" alt="Campera Urbana">
+        <h3>Campera Urbana</h3>
+        <p class="precio">$60.000</p>
+        <button class="btn-comprar">Agregar al carrito</button>
+      </div>
+    </section>
+
     <!-- Accesorios -->
-    <div class="producto-card" data-categoria="accesorios" data-nombre="Gorra Cool" data-precio="8000" data-stock="5">
-      <img src="https://via.placeholder.com/250x300?text=Gorra+Cool" alt="Gorra Cool">
-      <h3>Gorra Cool</h3>
-      <p class="precio">$8.000</p>
-      <button class="btn-comprar">Agregar al carrito</button>
-    </div>
-    <div class="producto-card" data-categoria="accesorios" data-nombre="Mochila Urbana" data-precio="15000" data-stock="5">
-      <img src="https://via.placeholder.com/250x300?text=Mochila+Urbana" alt="Mochila Urbana">
-      <h3>Mochila Urbana</h3>
-      <p class="precio">$15.000</p>
-      <button class="btn-comprar">Agregar al carrito</button>
-    </div>
+    <section id="accesorios" class="productos" style="display:none;">
+      <div class="producto-card" data-nombre="Gorra Cool" data-precio="12000" data-stock="5">
+        <img src="https://via.placeholder.com/250x300?text=Gorra+Cool" alt="Gorra Cool">
+        <h3>Gorra Cool</h3>
+        <p class="precio">$12.000</p>
+        <button class="btn-comprar">Agregar al carrito</button>
+      </div>
+      <div class="producto-card" data-nombre="Mochila Street" data-precio="45000" data-stock="5">
+        <img src="https://via.placeholder.com/250x300?text=Mochila+Street" alt="Mochila Street">
+        <h3>Mochila Street</h3>
+        <p class="precio">$45.000</p>
+        <button class="btn-comprar">Agregar al carrito</button>
+      </div>
+    </section>
+
     <!-- Sale -->
-    <div class="producto-card" data-categoria="sale" data-nombre="Remera Oferta" data-precio="19999" data-stock="5">
-      <img src="https://via.placeholder.com/250x300?text=Remera+Oferta" alt="Remera Oferta">
-      <h3>Remera Oferta</h3>
-      <p class="precio">$19.999</p>
-      <button class="btn-comprar">Agregar al carrito</button>
+    <section id="sale" class="productos" style="display:none;">
+      <div class="producto-card" data-nombre="Remera Oferta" data-precio="15000" data-stock="5">
+        <img src="https://via.placeholder.com/250x300?text=Remera+Oferta" alt="Remera Oferta">
+        <h3>Remera Oferta</h3>
+        <p class="precio">$15.000</p>
+        <button class="btn-comprar">Agregar al carrito</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal Carrito -->
+  <div id="modalCarrito" class="modal">
+    <div class="modal-contenido">
+      <span id="cerrarCarrito" class="cerrar">&times;</span>
+      <h3>Carrito de Compras</h3>
+      <ul id="lista-carrito"></ul>
+      <p id="total">Total: $0</p>
+
+      <div id="metodoPagoContenedor" style="display:none;">
+        <div class="metodo-pago">
+          <input type="radio" id="pago1" name="metodoPago" value="1">
+          <label for="pago1">
+            <span class="icono">💵</span>
+            <span class="titulo">Efectivo / Transferencia</span>
+            <span class="detalle">10% de descuento</span>
+          </label>
+        </div>
+        <div class="metodo-pago">
+          <input type="radio" id="pago2" name="metodoPago" value="2">
+          <label for="pago2">
+            <span class="icono">💳</span>
+            <span class="titulo">Tarjeta de crédito</span>
+            <span class="detalle">20% de recargo</span>
+          </label>
+        </div>
+        <div class="metodo-pago">
+          <input type="radio" id="pago3" name="metodoPago" value="3">
+          <label for="pago3">
+            <span class="icono">🏧</span>
+            <span class="titulo">Tarjeta de débito</span>
+            <span class="detalle">Sin recargo</span>
+          </label>
+        </div>
+      </div>
+
+      <button id="finalizarCompra">Finalizar compra</button>
+      <div id="resumen"></div>
     </div>
-  </section>
+  </div>
 
-  <!-- Secciones vacías para desplazamiento -->
-  <section id="ropa" class="productos"></section>
-  <section id="accesorios" class="productos"></section>
-  <section id="sale" class="productos"></section>
-</main>
+  <div style="display: flex; justify-content: center; margin: 20px 0;">
+    <button id="suscribirseNovedades" class="btn-comprar">Suscribirse a novedades</button>
+  </div>
 
-<!-- Footer -->
-<footer>© 2025 VIPER - Todos los derechos reservados.</footer>
+  <footer>
+    <p>© 2025 VIPER - Todos los derechos reservados.</p>
+  </footer>
 
-<script>
-// Copiar productos a secciones según categoría
-function cargarSeccion(categoria, idSeccion) {
-  const seccion = document.getElementById(idSeccion);
-  seccion.innerHTML = '';
-  document.querySelectorAll('.producto-card').forEach(card => {
-    if (card.dataset.categoria === categoria) {
-      seccion.appendChild(card.cloneNode(true));
-    }
-  });
-}
-
-document.querySelector('a[href="#ropa"]').addEventListener('click', () => cargarSeccion('ropa', 'ropa'));
-document.querySelector('a[href="#accesorios"]').addEventListener('click', () => cargarSeccion('accesorios', 'accesorios'));
-document.querySelector('a[href="#sale"]').addEventListener('click', () => cargarSeccion('sale', 'sale'));
-</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="app.js"></script>
 </body>
 </html>
